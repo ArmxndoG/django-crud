@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    {% extends 'layouts/base.html' %}
+    
+</head>
+<body>
+    {% block content %}
+    <main class="container py-5">
+        <section class="card card-body">
+        
+
+        {% if user.is_authenticated %}
+        <h1 class="display-1 text-center">Django App</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, omnis, nulla eos ipsum et, officiis quis recusandae maiores eligendi dignissimos placeat eveniet veritatis quaerat. Eligendi fuga necessitatibus quibusdam beatae iure obcaecati odio culpa error. Odio quam cum, nemo officiis esse, pariatur fugiat voluptas omnis quaerat minima enim natus optio debitis nostrum. Error, cumque pariatur? Eligendi adipisci voluptatibus iusto illum incidunt beatae doloremque, ipsum vitae alias reprehenderit veritatis quaerat. Impedit, eum dignissimos odio natus velit amet cum quis omnis cupiditate quidem, illo nemo! Ducimus, atque? Consectetur delectus excepturi corrupti! Voluptas ipsum eius sunt at nisi quis fugit non necessitatibus temporibus dicta.</p>
+        {% else %}
+        <h1 class="display-1 text-center">Django App</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, omnis, nulla eos ipsum et, officiis quis recusandae maiores eligendi dignissimos placeat eveniet veritatis quaerat. Eligendi fuga necessitatibus quibusdam beatae iure obcaecati odio culpa error. Odio quam cum, nemo officiis esse, pariatur fugiat voluptas omnis quaerat minima enim natus optio debitis nostrum. Error, cumque pariatur? Eligendi adipisci voluptatibus iusto illum incidunt beatae doloremque, ipsum vitae alias reprehenderit veritatis quaerat. Impedit, eum dignissimos odio natus velit amet cum quis omnis cupiditate quidem, illo nemo! Ducimus, atque? Consectetur delectus excepturi corrupti! Voluptas ipsum eius sunt at nisi quis fugit non necessitatibus temporibus dicta.</p>
+        <div class="text-center">
+            <a class="btn btn-secondary" href="/signup">Registarse</a>
+            <a class="btn btn-primary" href="/signin">Iniciar Sesión</a>
+        </div>
+        {% endif %}
+
+    </section>
+
+    </main>
+    
+    {% endblock %}
+    
+</body>
+</html>

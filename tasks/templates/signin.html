@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    
+    {% extends 'layouts/base.html' %}
+    
+</head>
+<body>
+    {% block content %}
+    
+    <!--POST: envia de forma oculta los campos, no va a mostrar en la url los campos-->
+    <!--CSRF: token para asegurar que el formulario fue creado desde el servidor (evitar suplantaciones)-->
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 mt-5">
+                <form class="card card-body" action="/signin/" method="POST">
+                <h1 class="text-center">Iniciar Sesión</h1>
+                {{error}}
+                {% csrf_token %}
+                <!--Formulario creado con Django
+                {{form}}-->
+                <div class="mb-3">
+                    <label for="username">Usuario: </label>
+                    <input id = "username" type="text" name="username" class="form-control" placeholder="Escribe tu usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="password1">Contraseña: </label>
+                    <input id = "password" type="password" name="password" class="form-control" placeholder="Escribe tu contraseña">
+                </div>
+               
+                <button class="btn btn-primary">Iniciar sesión</button>
+            </form>
+            </div>
+        </div>
+    </main>
+   
+    {% endblock %}
+</body>
+</html>
